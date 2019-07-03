@@ -1,4 +1,4 @@
-# carbon footprint
+# Carbon Footprint
 A Public repository to create and contribute to a greener world
 
 The Carbon Foot Print calculator will have a micro service api that allows event organizers to give participants a chance to calculate and plant trees required to offset travel co2 emission 
