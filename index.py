@@ -18,7 +18,24 @@ def values():
         bus = float(request.form['bus']) * 0.02
         car = float(request.form['car']) * 0.19
         total = international_flight + domestic_flight + train + bus + car
-    return jsonify(total)
+        co2 = float(total)
+        atree_offset = 22
+        atree_life = 20
+        offset = int(round(co2 / atree_offset / atree_life))
+        atree_survive = 80
+        total_trees = int(round(offset * 100 / atree_survive))
+        atree_cost = 300
+        total_cost = int(round(total_trees * atree_cost))
+
+        data = {
+            "co2": co2,
+            "offset": offset,
+            "num_trees": total_trees,
+            "tree_cost": atree_cost,
+            "total_cost": total_cost
+        }
+
+    return jsonify(data)
 
 
 if __name__ == "__main__":
