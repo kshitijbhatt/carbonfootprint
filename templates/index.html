@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carbon API</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="wrapper col-12">
+        <div class="row justify-content-center">
+            <div class="col-12 align-items-center">
+                <form action = "{{ url_for('results') }}" method = "POST">
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <label for="internationalFlight">International Flight</label>
+                            <input class="form-control" id="internationalFlight" name="internationalFlight" type="number" required/>
+                        </div>
+                        <div class="form-group col-6">
+                            <label for="domesticFlight">Domestic Flight</label>
+                            <input class="form-control" id="domesticFlight" name="domesticFlight" type="number" required/>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-4">
+                            <label for="train">Train</label>
+                            <input id = "train" class="form-control" type = "number" required name = "train" />
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="Bus">Bus</label>
+                            <input id = "bus" class="form-control" type = "number" required name = "bus" />
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="car">Car</label>
+                            <input id = "car" class="form-control" type = "number" required name = "car" />
+                        </div>
+                    </div>
+                    <div class="form-row w-100">
+                        <div class="col-12">
+                            <input class="form-control" type = "submit" value = "submit" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

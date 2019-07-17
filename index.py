@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, redirect, url_for
+from flask import Flask, request, jsonify, redirect, url_for, render_template
 
 app = Flask(__name__)
 app.debug = True
@@ -6,11 +6,11 @@ app.debug = True
 
 @app.route('/')
 def index():
-    return "Hello World! Python works but auto reload doesnt"
+    return render_template('index.html')
 
 
-@app.route('/values', methods=['POST', 'GET'])
-def values():
+@app.route('/results', methods=['POST', 'GET'])
+def results():
     if request.method == "POST":
         international_flight = float(request.form['internationalFlight']) * 0.10
         domestic_flight = float(request.form['domesticFlight']) * 0.12
@@ -26,14 +26,12 @@ def values():
         total_offset = int(round(co2 / absorption_rate / life_of_tree))
         total_trees = int(round(total_offset * 100 / survival_rate))
         total_cost = int(round(total_trees * cost_per_tree))
-
-        data = {
-            "totalCo2": co2,
+        data = [{
+            "totalEmission": co2,
             "noOfTrees": total_trees,
             "totalCost": total_cost
-        }
-
-    return jsonify(data)
+        }]
+        return render_template('results.html', data=data)
 
 
 if __name__ == "__main__":
