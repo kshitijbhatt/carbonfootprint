@@ -1,8 +1,10 @@
-
+{% extends 'layout.html' %}
+{% block body %}
     <ul>
     {% for data in data %}
     <li>Total Emission = {{data.totalEmission}}</li>
     <li>No of Trees required to offset = {{data.noOfTrees}}</li>
     <li>Total cost of offset = {{data.totalCost}}</li>
     {% endfor %}
+ {% endblock % }
    </ul>

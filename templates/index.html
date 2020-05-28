@@ -1,16 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Carbon API</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="wrapper col-12">
-        <div class="row justify-content-center">
+{% extends "layout.html" %}
+{% block content %}
+
+        <div class="row justify-content-center mx-auto my-5">
             <div class="col-12 align-items-center">
                 <form action = "{{ url_for('results') }}" method = "POST">
                     <div class="form-row">
@@ -45,7 +36,5 @@
                 </form>
             </div>
         </div>
-    </div>
 
-</body>
-</html>
+{% endblock %}
